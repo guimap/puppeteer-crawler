@@ -7,7 +7,10 @@ LEGENDAS_PASSWORD=
 MONGODB_URI=
 MONGODB_NAME=
 ```
-type `npm start`
+
+Into `app/Dockerfile`, add the subtitle name in `ENTRYPOINT ["npm", "start", "Simpsons", "2"]`
+
+Run `docker-compose up --build`
 
 ## Search for a specific subtitle
 ` npm start "Simpsons"`

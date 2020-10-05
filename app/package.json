@@ -1,17 +1,19 @@
 {
   "name": "crawler",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Crawler App whick get subtitles and save into databse",
+  "main": "./index.js",
   "scripts": {
     "start": "node index.js",
-    "start:debug": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:debug": "nodemon index.js"
   },
   "engines": {
     "node": "12.18.4"
   },
-  "author": "",
+  "repository": {
+    "url": "https://github.com/guimap/puppeteer-crawler"
+  },
+  "author": "Guilherme<guiihpr@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",

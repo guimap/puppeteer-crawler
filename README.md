@@ -4,8 +4,8 @@ Setup the `.env` file
 LEGENDAS_URL=
 LEGENDAS_USERNAME=
 LEGENDAS_PASSWORD=
-MONGODB_URI=
-MONGODB_NAME=
+MONGODB_URI=mongodb://mongo:27017
+MONGODB_NAME=subtitles
 ```
 
 Into `app/Dockerfile`, add the subtitle name in `ENTRYPOINT ["npm", "start", "Simpsons", "2"]`

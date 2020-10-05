@@ -48,14 +48,12 @@ class HTMLHelper {
   }
   
   getAuthorAndDate (authorAndDate) {
-    const [author, dateString] = authorAndDate.split('em')
-  
+    const [author, dateString] = authorAndDate.split(' em ')
     const rgxAuthor = new RegExp('(?<=\>)(.*?)(?=\<)')
     const rgxDate = /(\d{2})\/(\d{2})\/(\d{4})/g
   
     const [date, time] = dateString.split('-')
     const dateFormatted = date.replace(rgxDate, '$3-$2-$1')
-  
     return {
       author: author.match(rgxAuthor)[0],
       date: new Date(`${dateFormatted.trim()}T${time.trim()}:00`)

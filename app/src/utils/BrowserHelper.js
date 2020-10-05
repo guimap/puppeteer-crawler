@@ -8,12 +8,14 @@ const {
 class BrowserHelper {
   browser
   page
+  subtitleName
 
   constructor (htmlHelper) {
     this.htmlHelper = htmlHelper
   }
 
   async search(subtitleSearch, countPage) {
+    this.subtitleName = subtitleSearch
     await this.initPup()
     await this.navigate('/login')
     await this.fillValue('#UserLoginForm #UserUsername', LEGENDAS_USERNAME)
@@ -32,7 +34,7 @@ class BrowserHelper {
     const results = await this.page.evaluate(this.htmlHelper.transformHTMLToList, '')
     await this.page.close()
     await this.browser.close()
-    return results
+    return results.filter(this.filter.bind(this))
   }
 
   async initPup () {
@@ -73,6 +75,12 @@ class BrowserHelper {
       await this.page.click('#resultado_busca a.load_more')
       count++
     }
+  }
+
+  filter({name}) {
+    const terms = this.subtitleName.split(' ')
+    const rgx = new RegExp(`(${terms.join('.*')})`, 'ig')
+    return name.match(rgx)
   }
 }
 

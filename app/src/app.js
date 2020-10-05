@@ -26,6 +26,7 @@ async function run (subtitleSearch, pageCount = 1) {
   const htmlHelper = new HTMLHelper()
   const browserHelper = new BrowserHelper(htmlHelper)
 
+  console.log(`Search for "${subtitleSearch}"`)
   const listOfResults = await browserHelper.search(subtitleSearch, pageCount)
   const list = htmlHelper.sanitizeData(listOfResults)
   const pendingPromises = list.map(subtitleRepository.upsert)

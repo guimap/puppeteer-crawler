@@ -15,6 +15,6 @@ Run `docker-compose up --build`
 ## Search for a specific subtitle
 ` npm start "Simpsons"`
 
-## Search for a specific subtitle and with page counts
+## Search for a specific subtitle with page counts
 
 `npm start "Simpsons" 3`

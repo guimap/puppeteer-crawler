@@ -1,5 +1,12 @@
 # How to run
-
+Setup the `.env` file
+```
+LEGENDAS_URL=
+LEGENDAS_USERNAME=
+LEGENDAS_PASSWORD=
+MONGODB_URI=
+MONGODB_NAME=
+```
 type `npm start`
 
 ## Search for a specific subtitle

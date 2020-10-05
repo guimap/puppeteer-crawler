@@ -38,11 +38,7 @@ class BrowserHelper {
   async initPup () {
     this.browser = await puppeteer.launch({
       headless: true,
-      // slowMo: 20
-      defaultViewport: {
-        width: 1024,
-        height: 864
-      }
+      args: ['--no-sandbox']
     });
 
     this.page = await this.browser.newPage()
